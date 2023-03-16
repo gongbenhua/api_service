@@ -59,12 +59,12 @@ def delete_stud_by_name(student_name):
     rowcount = db.execute_value(sql, value)
     return rowcount
 
-if __name__ == '__main__':
-
-#     x=update_stud_name("std_2019015", "吴六")
-    x = select_student_by_name("张三")
-    #x = insert_stud("std_2078556","老何", "英语", "77777777777")
-    #x=delete_stud_by_name("std_2078556")
-    print(x)
+# if __name__ == '__main__':
+#
+# #     x=update_stud_name("std_2019015", "jack")
+#     x = select_student_by_name("jack")
+#     #x = insert_stud("std_2078556","snow", "english", "77777777777")
+#     #x=delete_stud_by_name("std_2078556")
+#     print(x)
 
 
