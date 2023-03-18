@@ -11,7 +11,7 @@
  Target Server Version : 80028
  File Encoding         : 65001
 
- Date: 08/03/2023 20:18:47
+ Date: 17/03/2023 21:54:20
 */
 
 SET NAMES utf8mb4;
@@ -22,14 +22,14 @@ SET FOREIGN_KEY_CHECKS = 0;
 -- ----------------------------
 DROP TABLE IF EXISTS `course`;
 CREATE TABLE `course`  (
-  `course_id` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci NOT NULL COMMENT '课程号',
-  `course_name` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci NULL DEFAULT NULL COMMENT '课程名称',
-  `teacher_id` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci NULL DEFAULT NULL COMMENT '任课教师id',
+  `course_id` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci NOT NULL,
+  `course_name` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci NULL DEFAULT NULL,
+  `teacher_id` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci NULL DEFAULT NULL,
   `
-start_time` date NULL DEFAULT NULL COMMENT '课程开始时间',
+start_time` date NULL DEFAULT NULL,
   `
-end_time` date NULL DEFAULT NULL COMMENT '课程结束时间',
-  `max_student` int(0) NULL DEFAULT NULL COMMENT '最大选课人数',
+end_time` date NULL DEFAULT NULL,
+  `max_student` int(0) NULL DEFAULT NULL,
   PRIMARY KEY (`course_id`) USING BTREE
 ) ENGINE = InnoDB CHARACTER SET = utf8mb4 COLLATE = utf8mb4_0900_ai_ci ROW_FORMAT = Dynamic;
 
@@ -47,10 +47,10 @@ INSERT INTO `course` VALUES ('co_2022005', 'Datebase', 'te_003', '2022-06-16', '
 -- ----------------------------
 DROP TABLE IF EXISTS `student`;
 CREATE TABLE `student`  (
-  `student_id` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci NOT NULL COMMENT '学号',
-  `student_name` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci NULL DEFAULT NULL COMMENT '学生姓名',
-  `subject` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci NULL DEFAULT NULL COMMENT '专业',
-  `phone` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci NULL DEFAULT NULL COMMENT '手机',
+  `student_id` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci NOT NULL,
+  `student_name` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci NULL DEFAULT NULL,
+  `subject` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci NULL DEFAULT NULL,
+  `phone` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci NULL DEFAULT NULL,
   PRIMARY KEY (`student_id`) USING BTREE
 ) ENGINE = InnoDB CHARACTER SET = utf8mb4 COLLATE = utf8mb4_0900_ai_ci ROW_FORMAT = Dynamic;
 
@@ -60,7 +60,7 @@ CREATE TABLE `student`  (
 INSERT INTO `student` VALUES ('std_2019015', 'Jack', 'mechanical engineering', '18744444444');
 INSERT INTO `student` VALUES ('std_2021788', 'Tom', 'accounting', '14477777777');
 INSERT INTO `student` VALUES ('std_2022001', 'Rose', 'computer science', '15677777777');
-INSERT INTO `student` VALUES ('std_2022045', 'Snow', 'computer science', '14455555555');
+INSERT INTO `student` VALUES ('std_2022045', 'snow', 'english', '77777777777');
 
 -- ----------------------------
 -- Table structure for student_course_select
@@ -78,6 +78,8 @@ CREATE TABLE `student_course_select`  (
 -- ----------------------------
 INSERT INTO `student_course_select` VALUES ('std_2019015', 'co_2022001', 80);
 INSERT INTO `student_course_select` VALUES ('std_2019015', 'co_2022003', 95);
+INSERT INTO `student_course_select` VALUES ('std_2019015', 'co_2022004', 90);
+INSERT INTO `student_course_select` VALUES ('std_2021788', 'co_2022004', 80);
 INSERT INTO `student_course_select` VALUES ('std_2022045', 'co_2022002', 70);
 INSERT INTO `student_course_select` VALUES ('std_2022045', 'co_2022004', 67);
 

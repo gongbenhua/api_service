@@ -52,3 +52,25 @@ def delete_stud_by_name(student_name):
     row = student_dao.delete_stud_by_name(student_name)
     row_dict = {"Number of code lines affected": row}
     return row_dict
+
+def select_score_by_name(student_name:str, course_name:str, teacher_name:str):
+    '''
+        Query student information by name
+          :param student_name
+          :return:Dictionary list of student information
+    '''
+    stud_score = student_dao.select_score_by_name(student_name, course_name, teacher_name)
+    return stud_score
+
+def insert_score(student_name, course_name, teacher_name, score):
+    '''
+         add new student information
+          :param    student_id
+                    student_name
+                    subject
+                    phone
+          :return:Number of code lines affected
+    '''
+    row = student_dao.insert_score(student_name, course_name, teacher_name, score)
+    row_dict = {"Number of code lines affected": row}
+    return row_dict
