@@ -1,4 +1,4 @@
-from dynamic.student import student_dao
+from dynamic import student_dao
 
 def select_stud_count():
     '''
@@ -30,7 +30,7 @@ def update_stud_name(student_id:str ,student_name:str):
     row_dict ={"Number of code lines affected": row}
     return row_dict
 
-def insert_stud(student_id, student_name,subject ,phone):
+def insert_stud(student_id, student_name, subject, phone, age, sclass, dormitory):
     '''
          add new student information
           :param    student_id
@@ -39,7 +39,7 @@ def insert_stud(student_id, student_name,subject ,phone):
                     phone
           :return:Number of code lines affected
     '''
-    row = student_dao.insert_stud(student_id, student_name,subject ,phone)
+    row = student_dao.insert_stud(student_id, student_name, subject, phone, age, sclass, dormitory)
     row_dict = {"Number of code lines affected": row}
     return row_dict
 

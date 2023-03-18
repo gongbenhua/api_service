@@ -1,0 +1,26 @@
+{% extends 'base.html' %}
+
+{% block header %}
+  <h1>{% block title %}Edit "{{ post['title'] }}"{% endblock %}</h1>
+{% endblock %}
+
+{% block content %}
+  <form method="post">
+    <label for="student_id">student_id</label>
+    <input name="student_id" id="student_id" value="{{ request.form['student_id'] or post['student_id'] }}" required>
+    <label for="student_name">student_name</label>
+    <textarea name="student_name" id="student_name">{{ request.form['student_name'] }}</textarea>
+    <label for="subject">subject</label>
+    <textarea name="subject" id="subject">{{ request.form['subject'] }}</textarea>
+    <label for="phone">phone</label>
+    <textarea name="phone" id="phone">{{ request.form['phone'] }}</textarea>
+    <label for="age">age</label>
+    <textarea name="age" id="age">{{ request.form['age'] }}</textarea>
+    <label for="class">class</label>
+    <textarea name="class" id="class">{{ request.form['class'] }}</textarea>
+    <label for="dormitory">dormitory</label>
+    <textarea name="dormitory" id="dormitory">{{ request.form['dormitory'] }}</textarea>
+    <input type="submit" value="Save">
+  </form>
+  <hr>
+{% endblock %}

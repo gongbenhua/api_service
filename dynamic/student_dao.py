@@ -36,15 +36,15 @@ def update_stud_name(student_id:str ,student_name:str):
     rowcount = db.execute_value(sql, value)
     return rowcount
 
-def insert_stud(student_id, student_name,subject ,phone):
+def insert_stud(student_id, student_name, subject, phone, age, sclass, dormitory):
     '''
          add new student information
           :param: student_id, student_name,subject ,phone
           :return:Number of code lines affected
     '''
-    sql = 'insert into student (student_id, student_name, subject, phone)' \
-          'values(%s,%s,%s,%s)'
-    value = (student_id,student_name,  subject ,phone)
+    sql = 'insert into student (student_id, student_name, subject, phone, age, class, dormitory)' \
+          'values(%s,%s,%s,%s,%s,%s,%s)'
+    value = (student_id,student_name,  subject ,phone, age, sclass, dormitory)
     rowcount = db.execute_value(sql, value)
     return rowcount
 

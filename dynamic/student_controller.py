@@ -1,9 +1,10 @@
 from flask import Blueprint, request
 
-from dynamic.student import student_server
+from dynamic import student_server
 from utils.response.json_fun import to_json_data
 
 student_controller = Blueprint('student_controller', __name__)
+
 
 
 @student_controller.route('/select_stud_count', methods=['GET','POST'])
@@ -13,6 +14,7 @@ def select_stud_count():
     '''
     row = student_server.select_stud_count()
     return to_json_data(code=200, msg='Request succeeded', data=row)
+
 
 @student_controller.route('/select_student_by_name', methods=['GET','POST'])
 def select_student_by_name():
@@ -79,7 +81,10 @@ def insert_stud():
     student_name = request.form["student_name"]
     subject = request.form["subject"]
     phone = request.form["phone"]
-    row = student_server.insert_stud(student_id, student_name, subject, phone)
+    age = request.form["age"]
+    sclass = request.form["class"]
+    dormitory = request.form["dormitory"]
+    row = student_server.insert_stud(student_id, student_name, subject, phone, age, sclass, dormitory)
     return to_json_data(code=200, msg='Request succeeded', data=row)
 
 @student_controller.route('/insert_score', methods=['GET','POST'])
@@ -98,3 +103,4 @@ def insert_score():
     score = request.form["score"]
     row = student_server.insert_score(student_name, course_name, teacher_name, score)
     return to_json_data(code=200, msg='Request succeeded', data=row)
+
