@@ -90,7 +90,7 @@ def insert_stud():
 @student_controller.route('/insert_score', methods=['GET','POST'])
 def insert_score():
     '''
-         add new student information
+         add new student score information
           :param    student_name
                     course_name
                     teacher_name

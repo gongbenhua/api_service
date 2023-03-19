@@ -1,4 +1,4 @@
-*
+/*
  Navicat Premium Data Transfer
 
  Source Server         : localhost_3306
@@ -11,7 +11,7 @@
  Target Server Version : 80028
  File Encoding         : 65001
 
- Date: 17/03/2023 21:54:20
+ Date: 19/03/2023 09:12:12
 */
 
 SET NAMES utf8mb4;
@@ -51,16 +51,19 @@ CREATE TABLE `student`  (
   `student_name` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci NULL DEFAULT NULL,
   `subject` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci NULL DEFAULT NULL,
   `phone` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci NULL DEFAULT NULL,
+  `age` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci NULL DEFAULT NULL,
+  `class` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci NULL DEFAULT NULL,
+  `dormitory` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci NULL DEFAULT NULL,
   PRIMARY KEY (`student_id`) USING BTREE
 ) ENGINE = InnoDB CHARACTER SET = utf8mb4 COLLATE = utf8mb4_0900_ai_ci ROW_FORMAT = Dynamic;
 
 -- ----------------------------
 -- Records of student
 -- ----------------------------
-INSERT INTO `student` VALUES ('std_2019015', 'Jack', 'mechanical engineering', '18744444444');
-INSERT INTO `student` VALUES ('std_2021788', 'Tom', 'accounting', '14477777777');
-INSERT INTO `student` VALUES ('std_2022001', 'Rose', 'computer science', '15677777777');
-INSERT INTO `student` VALUES ('std_2022045', 'snow', 'english', '77777777777');
+INSERT INTO `student` VALUES ('std_2019015', 'Jack', 'mechanical engineering', '18744444444', '25', '1', '5');
+INSERT INTO `student` VALUES ('std_2021788', 'Tom', 'accounting', '14477777777', '24', '1', '10');
+INSERT INTO `student` VALUES ('std_2022001', 'Rose', 'computer science', '15677777777', '25', '1', '9');
+INSERT INTO `student` VALUES ('std_2022045', 'snow', 'english', '77777777777', '23', '2', '8');
 
 -- ----------------------------
 -- Table structure for student_course_select
@@ -102,5 +105,21 @@ INSERT INTO `teacher` VALUES ('te_001', 'Frank', '14477995555', 'Professor');
 INSERT INTO `teacher` VALUES ('te_002', 'York', '23355555555', 'lecturer');
 INSERT INTO `teacher` VALUES ('te_003', 'Saber', '77777777777', 'Professor');
 INSERT INTO `teacher` VALUES ('te_004', 'Jim', '33366664444', 'lecturer');
+
+-- ----------------------------
+-- Table structure for user
+-- ----------------------------
+DROP TABLE IF EXISTS `user`;
+CREATE TABLE `user`  (
+  `id` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci NOT NULL,
+  `username` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci NULL DEFAULT NULL,
+  `password` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci NULL DEFAULT NULL,
+  PRIMARY KEY (`id`) USING BTREE
+) ENGINE = InnoDB CHARACTER SET = utf8mb4 COLLATE = utf8mb4_0900_ai_ci ROW_FORMAT = Dynamic;
+
+-- ----------------------------
+-- Records of user
+-- ----------------------------
+INSERT INTO `user` VALUES ('1', '123', '123');
 
 SET FOREIGN_KEY_CHECKS = 1;

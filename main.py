@@ -13,7 +13,6 @@ app.config.from_mapping(
 app.register_blueprint(student_controller, url_prefix='/backend/student')
 app.register_blueprint(auth, url_prefix='/auth')
 app.register_blueprint(stud, url_prefix='/stud')
-# app.config["JSON_AS_ASCII"] = False  # jsonify return normal fonts
 CORS(app, supports_credentials=True) #Allow request to be sent cookie
 
 @app.route('/')

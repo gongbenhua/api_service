@@ -65,7 +65,7 @@ def select_score_by_name(student_name:str, course_name:str, teacher_name:str ):
           :param: student_name
                   course_name
                   teacher_name
-          :return: Number of code lines affected
+          :return: score
     '''
     score_sql = 'select s.student_name, scs.score from ' \
                 'student s  INNER JOIN student_course_select scs on s.student_id= scs.student_id ' \
@@ -78,9 +78,11 @@ def select_score_by_name(student_name:str, course_name:str, teacher_name:str ):
 
 def insert_score(student_name:str, course_name:str, teacher_name:str, score):
     '''
-        Query student information by name
+        add new student score information
           :param: student_name
                   course_name
+                  teacher_name
+                  score
           :return: Number of code lines affected
     '''
     student_id_sql = 'select student_id from student where student_name = %s'
